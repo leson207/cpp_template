@@ -1,4 +1,6 @@
 """Build rules for the src package."""
+module(name = "cpp_sample", version = "0.1")
+
 bazel_dep(name = "rules_cc", version = "0.2.8")
 
 bazel_dep(name = "quill", version = "9.0.0")
