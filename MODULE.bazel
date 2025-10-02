@@ -1,9 +1,30 @@
 """Build rules for the src package."""
 bazel_dep(name = "rules_cc", version = "0.2.8")
 
+bazel_dep(name = "quill", version = "9.0.0")
+
 bazel_dep(name = "hedron_compile_commands", dev_dependency = True)
 git_override(
     module_name = "hedron_compile_commands",
     remote = "https://github.com/hedronvision/bazel-compile-commands-extractor.git",
     commit = "abb61a688167623088f8768cc9264798df6a9d10",
+)
+
+
+bazel_dep(name = "simdjson", version = "4.0.7")
+archive_override(
+    module_name = "simdjson",
+    strip_prefix = "simdjson-4.0.7",
+    urls = ["https://github.com/simdjson/simdjson/archive/refs/tags/v4.0.7.tar.gz"],
+    patch_cmds = [
+        """echo 'module(name = "simdjson", version = "4.0.7")' > MODULE.bazel""",
+        """echo 'package(default_visibility = ["//visibility:public"])
+
+cc_library(
+    name = "simdjson",
+    srcs = ["singleheader/simdjson.cpp"],
+    hdrs = ["singleheader/simdjson.h"],
+    includes = ["singleheader"],
+)' > BUILD.bazel""",
+    ],
 )
