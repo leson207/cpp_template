@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.31.6)
-project(my_project LANGUAGES C CXX)
+project(cpp_sample LANGUAGES C CXX)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 add_subdirectory(src)
