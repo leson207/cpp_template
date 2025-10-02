@@ -1,0 +1,21 @@
+common --enable_bzlmod
+build --cxxopt=-std=c++23
+build --linkopt=-fuse-ld=mold
+build --action_env=CC=/usr/bin/clang
+build --action_env=CXX=/usr/bin/clang++
+
+# Debug build
+build:dbg --compilation_mode=dbg
+build:dbg --cxxopt=-O0
+build:dbg --cxxopt=-g0
+build:dbg --cxxopt=-pipe
+build:dbg --cxxopt=-fno-rtti
+build:dbg --cxxopt=-fno-exceptions
+build:dbg --linkopt=-Wl,-O1
+build:dbg --linkopt=-Wl,--as-needed
+build:dbg --cxxopt=-ftime-trace
+
+
+# build --experimental_convenience_symlinks=ignore
+
+# build --experimental_action_listener=clang_tidy
