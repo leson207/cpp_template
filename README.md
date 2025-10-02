@@ -12,8 +12,6 @@ conan install . \
 # Notice
 update cmake version
 ctr+I have tab_size=2, use clang_tidy or format
-up-to-date conan profile
-structure conan file into folder (where to put conanfile, profile, dep, ...)
 
 # Reference
 https://github.com/Kitware/CMake

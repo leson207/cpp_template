@@ -7,8 +7,9 @@ configure:
 
 build: configure
 	cmake --build --preset $(PRESET)
+	cp -f build/$(PRESET)/compile_commands.json compile_commands.json
 
-run: build
+run:
 	./build/$(PRESET)/src/main
 
 clean:
