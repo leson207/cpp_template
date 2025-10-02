@@ -3,10 +3,10 @@
 conan profile detect --force # coppy content of this later
 
 conan install . \
-  --profile:host=conanprofile \
-  --profile:build=conanprofile \
+  --profile:host=profiles/debug \
+  --profile:build=profiles/debug \
   --build=missing \
-  --output-folder=conan
+  --output-folder=build/debug/conan
 
 ```
 # Notice
