@@ -1,13 +1,13 @@
 # # Prefer.vscode/setting
-# CompileFlags:
-#   CompilationDatabase: build/debug
-#   Add:
-#     - -O0
-#     - -g0
-#     - -pipe
-#     - -std=c++23
-#     - -fuse-ld=mold
-#   Compiler: clang++
+CompileFlags:
+  CompilationDatabase: build/debug
+  Add:
+    - -O0
+    - -g0
+    - -pipe
+    - -std=c++23
+    - -fuse-ld=mold
+  Compiler: clang++
 
 # Index:
 #   Background: Build

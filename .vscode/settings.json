@@ -1,6 +1,8 @@
 {
     "clangd.onConfigChanged": "restart",
     "clangd.arguments": [
+        "--enable-config",
+
         "--compile-commands-dir=build/debug",
         "--background-index",
         "-pretty",
@@ -9,5 +11,10 @@
         "--clang-tidy",
         "--completion-style=detailed",
         "--header-insertion=iwyu",
-    ]
+    ],
+    "files.associations": {
+        ".clangd": "yaml",
+        ".clang-tidy": "yaml",
+        ".clang-format": "yaml"
+    }
 }
