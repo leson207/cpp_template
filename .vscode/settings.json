@@ -3,11 +3,11 @@
     "clangd.arguments": [
         "--compile-commands-dir=build/debug",
         "--background-index",
-        "--pretty",
+        "-pretty",
         "-j=8",
 
         "--clang-tidy",
         "--completion-style=detailed",
-        "--header-insertion=iwyu",
+        "--header-insertion=Never",
     ]
 }

@@ -1,21 +1,17 @@
 # Install
+## Conan
 ```
 # create conan default profile
-conan profile detect --force # coppy content of this later
-
-# create clangd setting for vscode
-ctr + shift + p -> Open Workspace Setting
-
-"clangd.path": "/usr/bin/clangd-16",
-"clangd.arguments": [
-  "--compile-commands-dir=build",
-  "--background-index",
-  "--header-insertion=never"
-]
-
-# use clang-tidy (just add .clang-tidy)
-clang-tidy -p build/debug src/main.cpp
+conan profile detect --force # coppy content of this later the use make
 ```
+
+## CLangd
+ctr + shift + p -> Open Workspace Setting
+## Linter
+Add .clang-tidy file, vscode auto detect that file
+
+## Formater
+add .clang-format, vscode auto detect that file
 
 use find_package to add lib or clangd will use system lib
 # Notice
