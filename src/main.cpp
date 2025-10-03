@@ -8,6 +8,8 @@
 
 #include <string>
 
+#include "nlohmann/json.hpp"
+
 class RpcClient
 {
     std::string _host;

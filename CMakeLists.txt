@@ -3,6 +3,3 @@ project(cpp_sample LANGUAGES C CXX)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 add_subdirectory(src)
-
-# cmake --preset default -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
-# cmake --build build -j 8
