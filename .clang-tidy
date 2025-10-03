@@ -1,4 +1,11 @@
-Checks: '-*,modernize-*,performance-*,readability-*'
+Checks: >
+  -*,
+  modernize-*,
+  performance-*,
+  readability-*,
+  bugprone-*,
+  cppcoreguidelines-*
+
 WarningsAsErrors: ''
-HeaderFilterRegex: '.*'
-AnalyzeTemporaryDtors: false
+HeaderFilterRegex: 'src/.*'
+FormatStyle: file

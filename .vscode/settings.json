@@ -1,12 +1,13 @@
 {
+    "clangd.onConfigChanged": "restart",
     "clangd.arguments": [
         "--compile-commands-dir=build/debug",
         "--background-index",
-        "--header-insertion=never",
+        "--pretty",
+        "-j=8",
 
         "--clang-tidy",
-        "--clang-tidy-checks=*",
         "--completion-style=detailed",
-        "--header-insertion=iwyu"
+        "--header-insertion=iwyu",
     ]
 }
