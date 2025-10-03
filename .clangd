@@ -1,0 +1,29 @@
+# # Prefer.vscode/setting
+# CompileFlags:
+#   CompilationDatabase: build/debug
+#   Add:
+#     - -O0
+#     - -g0
+#     - -pipe
+#     - -std=c++23
+#     - -fuse-ld=mold
+#   Compiler: clang++
+
+# Index:
+#   Background: Build
+#   StandardLibrary: true
+
+# Diagnostics:
+#   ClangTidy:
+#     Add: [performance-*, modernize-*]
+#     Remove: [llvm-include-order]
+#     CheckOptions:
+#       readability-identifier-naming.VariableCase: camelBack
+#     FastCheckFilter: Strict
+#   UnusedIncludes: Strict
+
+# Completion:
+#   AllScopes: Yes
+#   ArgumentLists: FullPlaceholders
+#   HeaderInsertion: IWYU
+#   CodePatterns: All
