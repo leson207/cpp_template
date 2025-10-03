@@ -8,6 +8,6 @@
 
         "--clang-tidy",
         "--completion-style=detailed",
-        "--header-insertion=Never",
+        "--header-insertion=iwyu",
     ]
 }
