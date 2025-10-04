@@ -24,6 +24,10 @@ RpcClient::RpcClient(boost::asio::io_context& ioc, std::string_view host)
 
 auto main() -> int
 {
+    for (int i = 0; i <= 10; ++i)
+    {
+        std::cout << i + 100 << "\n";
+    }
     std::cout << "Hello world!!!!!!!";
     return 0;
 }
