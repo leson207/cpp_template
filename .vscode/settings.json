@@ -16,5 +16,9 @@
         ".clangd": "yaml",
         ".clang-tidy": "yaml",
         ".clang-format": "yaml"
-    }
+    },
+    "cmake.debugConfig": {
+        "type": "lldb-dap",
+        "stopOnEntry": true
+    },
 }

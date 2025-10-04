@@ -1,0 +1,21 @@
+{
+    // Prefer Shift+F5 cause use F5 call a cmake build
+    // Use IntelliSense to learn about possible attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug with LLDB",
+            "type": "lldb-dap",
+            "request": "launch",
+            "program": "${command:cmake.launchTargetPath}",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopOnEntry": true,
+            "env": {
+                "PATH": "${env:PATH}:${command:cmake.launchTargetDirectory}"
+            },
+            "console": "integratedTerminal"
+        },
+    ]
+}

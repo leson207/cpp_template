@@ -2,6 +2,7 @@
     // See https://go.microsoft.com/fwlink/?LinkId=827846 to learn about workspace recommendations.
     "recommendations": [
         "llvm-vs-code-extensions.vscode-clangd",
+        "llvm-vs-code-extensions.lldb-dap",
         // "github.vscode-github-actions",
         "ms-vscode.cmake-tools",
     ],

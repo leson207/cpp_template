@@ -17,7 +17,6 @@ add .clang-format, vscode auto detect that file
 use find_package to add lib or clangd will use system lib
 # Notice
 python file for conan
-update cmake version
 # Reference
 https://github.com/Kitware/CMake
 https://cmake.org/cmake/help/book/mastering-cmake/chapter/Testing%20With%20CMake%20and%20CTest.html
