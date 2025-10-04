@@ -19,6 +19,5 @@
     },
     "cmake.debugConfig": {
         "type": "lldb-dap",
-        "stopOnEntry": true
     },
 }
