@@ -27,7 +27,7 @@
             "inherits": "default",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
-                "CMAKE_CXX_FLAGS_DEBUG": "-O0 -g0 -pipe",
+                "CMAKE_CXX_FLAGS_DEBUG": "-O0 -g -pipe",
                 "CMAKE_EXE_LINKER_FLAGS_DEBUG": "-Wl,-O1 -Wl,--as-needed"
             },
             "toolchainFile": "conan/build/Debug/generators/conan_toolchain.cmake"
