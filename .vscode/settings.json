@@ -10,10 +10,9 @@
         "-j=8",
         
         "--all-scopes-completion",
-        "--suggest-missing-includes",
         "--limit-results=500",
         
-        "--log=error",
+        "--log=info",
         "-pretty",
 
         "--clang-tidy",
