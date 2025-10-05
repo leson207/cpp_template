@@ -13,9 +13,20 @@
             "cwd": "${workspaceFolder}",
             "stopOnEntry": false,
             "env": {
-                "PATH": "${env:PATH}:${command:cmake.launchTargetDirectory}"
+                // "PATH": "${env:PATH}:${command:cmake.launchTargetDirectory}",
+                "LD_LIBRARY_PATH": "${command:cmake.launchTargetDirectory}:${env:LD_LIBRARY_PATH}"
             },
-            "console": "integratedTerminal"
+            "initCommands": [
+                "settings set stop-line-count-before 3",
+                "settings set stop-line-count-after 3",
+                
+                "settings set target.process.thread.step-avoid-regexp std::",
+                "settings set stop-disassembly-display never",
+                "settings set frame-format \"frame #${frame.index}: ${frame.pc} ${module.file.basename}`${function.name-with-args}\\n\"",
+                "settings set prompt \"(lldb) \"",
+                "settings set auto-confirm true",
+            ],
+            "console": "externalTerminal"
         }
     ]
 }
