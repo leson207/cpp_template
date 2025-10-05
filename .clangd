@@ -3,15 +3,18 @@ CompileFlags:
   CompilationDatabase: build/debug
   Add:
     - -O0
-    - -g0
+    - -g
     - -pipe
     - -std=c++23
     - -fuse-ld=mold
+    - -Wall
   Compiler: clang++
 
 # Index:
 #   Background: Build
 #   StandardLibrary: true
+#   StorePreambleInMemory: true
+
 
 # Diagnostics:
 #   ClangTidy:

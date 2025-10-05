@@ -2,11 +2,19 @@
     "clangd.onConfigChanged": "restart",
     "clangd.arguments": [
         "--enable-config",
-
         "--compile-commands-dir=build/debug",
+        
+        "--pch-storage=memory",
         "--background-index",
-        "-pretty",
+        "--background-index-priority=background",
         "-j=8",
+        
+        "--all-scopes-completion",
+        "--suggest-missing-includes",
+        "--limit-results=500",
+        
+        "--log=error",
+        "-pretty",
 
         "--clang-tidy",
         "--completion-style=detailed",
