@@ -7,14 +7,17 @@ build --action_env=CXX=/usr/bin/clang++
 # Debug build
 build:dbg --compilation_mode=dbg
 build:dbg --cxxopt=-O0
-build:dbg --cxxopt=-g0
+build:dbg --cxxopt=-g
 build:dbg --cxxopt=-pipe
-build:dbg --cxxopt=-fno-rtti
-build:dbg --cxxopt=-fno-exceptions
 build:dbg --linkopt=-Wl,-O1
 build:dbg --linkopt=-Wl,--as-needed
-build:dbg --cxxopt=-ftime-trace
 
+build:fastbuild --compilation_mode=fastbuild
+build:fastbuild --cxxopt=-O1
+build:fastbuild --cxxopt=-DNDEBUG
+build:fastbuild --cxxopt=-pipe
+build:fastbuild --linkopt=-Wl,-O1
+build:fastbuild --linkopt=-Wl,--as-needed
 
 # build --experimental_convenience_symlinks=ignore
 

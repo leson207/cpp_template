@@ -1,7 +1,7 @@
 .PHONY: build refresh clean
 
 build:
-	bazel build //src:main --config=dbg # opt, fastbuild
+	bazel build //src:main --config=fastbuild
 
 refresh:
 	bazel run //:refresh_compile_commands

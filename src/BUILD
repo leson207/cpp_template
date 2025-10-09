@@ -5,6 +5,9 @@ cc_binary(
     srcs = ["main.cc"],
     deps = [
         "@quill",
-        "@simdjson//:simdjson"
+        "@simdjson//:simdjson",
+        "@boost.system",
+        "@openssl//:crypto",
+        "@openssl//:ssl",
     ],
 )
