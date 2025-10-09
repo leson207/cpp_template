@@ -24,7 +24,7 @@
                 "settings set stop-disassembly-display never",
                 "settings set frame-format \"frame #${frame.index}: ${frame.pc} ${module.file.basename}`${function.name-with-args}\\n\"",
                 "settings set prompt \"(lldb) \"",
-                "settings set auto-confirm true",
+                "settings set auto-confirm true"
             ],
             "console": "externalTerminal"
         }

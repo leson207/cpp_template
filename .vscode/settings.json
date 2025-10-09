@@ -17,7 +17,7 @@
 
         "--clang-tidy",
         "--completion-style=detailed",
-        "--header-insertion=iwyu",
+        "--header-insertion=iwyu"
     ],
     "files.associations": {
         ".clangd": "yaml",
@@ -25,6 +25,6 @@
         ".clang-format": "yaml"
     },
     "cmake.debugConfig": {
-        "type": "lldb-dap",
-    },
+        "type": "lldb-dap"
+    }
 }
