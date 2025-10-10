@@ -3,7 +3,6 @@
     "recommendations": [
         "llvm-vs-code-extensions.vscode-clangd",
         "llvm-vs-code-extensions.lldb-dap",
-        // "github.vscode-github-actions",
         "ms-vscode.cmake-tools"
     ],
     "unwantedRecommendations": []
