@@ -5,7 +5,6 @@ bazel_dep(name = "rules_cc", version = "0.2.8")
 
 bazel_dep(name = "quill", version = "9.0.0")
 bazel_dep(name = "openssl", version = "3.3.1.bcr.7")
-bazel_dep(name = "boost.system", version = "1.89.0")
 
 bazel_dep(name = "hedron_compile_commands", dev_dependency = True)
 git_override(
@@ -14,6 +13,43 @@ git_override(
     commit = "abb61a688167623088f8768cc9264798df6a9d10",
 )
 
+bazel_dep(name = "boost", version = "1.89.0")
+archive_override(
+    module_name = "boost",
+    strip_prefix = "boost-1.89.0",
+    urls = ["https://github.com/boostorg/boost/releases/download/boost-1.89.0/boost-1.89.0-b2-nodocs.tar.gz"],
+    patch_cmds = [
+        """echo 'module(name = "boost", version = "1.89.0")' > MODULE.bazel""",
+        """echo 'package(default_visibility = ["//visibility:public"])
+
+cc_library(
+    name = "system",
+    hdrs = glob([
+        "boost/system/*.hpp",
+        "boost/system/**/*.hpp",
+    ]),
+    includes = ["boost"],
+)
+
+cc_library(
+    name = "asio",
+    hdrs = glob([
+        "boost/asio/*.hpp",
+        "boost/asio/**/*.hpp",
+    ]),
+    includes = ["boost"],
+)
+
+cc_library(
+    name = "beast",
+    hdrs = glob([
+        "boost/beast/*.hpp",
+        "boost/beast/**/*.hpp",
+    ]),
+    includes = ["boost"],
+)' > BUILD.bazel""",
+    ],
+)
 
 bazel_dep(name = "simdjson", version = "4.0.7")
 archive_override(

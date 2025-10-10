@@ -10,5 +10,5 @@ refresh_compile_commands(
     # exclude_headers = "all",
 
     # Optional: Exclude external dependencies for faster generation
-    exclude_external_sources = True,
+    # exclude_external_sources = True,
 )

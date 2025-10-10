@@ -6,7 +6,9 @@ cc_binary(
     deps = [
         "@quill",
         "@simdjson//:simdjson",
-        "@boost.system",
+        "@boost//:system",
+        "@boost//:beast",
+        "@boost//:asio",
         "@openssl//:crypto",
         "@openssl//:ssl",
     ],
