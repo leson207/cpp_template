@@ -22,13 +22,13 @@ run:
 cmake_clean:
 	rm -rf ./build/$(PRESET)
 
-conan_build:
+conan_install:
 	conan install . \
 		--profile:host=conan/profiles/$(PRESET) \
 		--profile:build=conan/profiles/$(PRESET) \
 		--build=missing \
 		--output-folder=conan
-	rm CMakeUserPresets.json
+# 	rm CMakeUserPresets.json
 
 conan_clean:
 	rm -rf conan/build

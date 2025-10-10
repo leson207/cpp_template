@@ -1,8 +1,8 @@
 {
-    "version": 3,
+    "version": 4,
     "configurePresets": [
         {
-            "name": "default",
+            "name": "base",
             "generator": "Ninja",
             "binaryDir": "${sourceDir}/build/${presetName}",
             "cacheVariables": {
@@ -24,7 +24,7 @@
         },
         {
             "name": "debug",
-            "inherits": "default",
+            "inherits": "base",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
                 "CMAKE_CXX_FLAGS_DEBUG": "-O0 -ggdb3 -pipe",
@@ -35,13 +35,15 @@
     ],
     "buildPresets": [
         {
-            "name": "default",
-            "configurePreset": "default",
+            "name": "base",
+            "configurePreset": "base",
+            "configuration": "Base",
             "jobs": 8
         },
         {
             "name": "debug",
             "configurePreset": "debug",
+            "configuration": "Debug",
             "jobs": 8
         }
     ]
