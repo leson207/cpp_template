@@ -3,9 +3,9 @@ SHELL := /bin/bash
 
 .PHONY:
 
-PRESET ?= debug
+PRESET ?= Debug
 
-CONAN_ENV := ./conan/build/Debug/generators/conanbuild.sh
+CONAN_ENV := ./build/${PRESET}/generators/conanbuild.sh
 
 cmake_config:
 	. $(CONAN_ENV)
@@ -20,15 +20,20 @@ run:
 	./build/$(PRESET)/src/main
 
 cmake_clean:
-	rm -rf ./build/$(PRESET)
+	shopt -s extglob
+	rm -rf ./build/$(PRESET)/!(generators)
 
 conan_install:
 	conan install . \
-		--profile:host=conan/profiles/$(PRESET) \
-		--profile:build=conan/profiles/$(PRESET) \
+		--profile:host=profile \
+		--profile:build=profile \
 		--build=missing \
-		--output-folder=conan
-# 	rm CMakeUserPresets.json
+		-s build_type=$(PRESET)
+
+	rm CMakeUserPresets.json
 
 conan_clean:
-	rm -rf conan/build
+	rm -rf ./build/$(PRESET)/generators
+
+clean:
+	rm -rf build/$(PRESET)

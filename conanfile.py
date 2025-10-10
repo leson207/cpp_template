@@ -1,6 +1,5 @@
-import os
 from conan import ConanFile
-from conan.tools.cmake import CMakeToolchain, CMake, cmake_layout, CMakeDeps
+from conan.tools.cmake import CMakeToolchain, cmake_layout, CMakeDeps
 
 
 class CompressorRecipe(ConanFile):
@@ -15,19 +14,18 @@ class CompressorRecipe(ConanFile):
 
     def build_requirements(self):
         self.tool_requires("cmake/4.1.2")
-        # self.tool_requires("ninja/1.13.1")
 
     def layout(self):
         cmake_layout(self)
+        # self.folders.build = os.path.join("build", str(self.settings.build_type))
         # self.folders.generators = os.path.join("build", str(self.settings.build_type), "generators")
-
 
     def generate(self):
         deps = CMakeDeps(self)
         deps.generate()
 
         tc = CMakeToolchain(self)
-        tc.user_presets_path = 'ConanPresets.json'
+        # tc.user_presets_path = 'ConanPresets.json'
         tc.generate()
 
     # def build(self):

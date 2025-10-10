@@ -1,3 +1,4 @@
 build
 .cache
 conan/build
+.venv

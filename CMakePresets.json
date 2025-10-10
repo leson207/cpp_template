@@ -1,10 +1,11 @@
 {
-    "version": 4,
+    "version": 10,
     "configurePresets": [
         {
-            "name": "base",
+            "name": "Default",
             "generator": "Ninja",
             "binaryDir": "${sourceDir}/build/${presetName}",
+            "toolchainFile": "${sourceDir}/build/${presetName}/generators/conan_toolchain.cmake",
             "cacheVariables": {
                 "CMAKE_CXX_STANDARD": "23",
                 "CMAKE_CXX_STANDARD_REQUIRED": "ON",
@@ -15,7 +16,7 @@
                 
                 "CMAKE_EXE_LINKER_FLAGS": "-fuse-ld=mold",
                 "CMAKE_SHARED_LINKER_FLAGS": "-fuse-ld=mold",
-                
+
                 "CMAKE_C_COMPILER_LAUNCHER": "ccache",
                 "CMAKE_CXX_COMPILER_LAUNCHER": "ccache",
 
@@ -23,27 +24,24 @@
             }
         },
         {
-            "name": "debug",
-            "inherits": "base",
+            "name": "Debug",
+            "inherits": ["Default"],
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
                 "CMAKE_CXX_FLAGS_DEBUG": "-O0 -ggdb3 -pipe",
                 "CMAKE_EXE_LINKER_FLAGS_DEBUG": "-Wl,-O1 -Wl,--as-needed"
-            },
-            "toolchainFile": "conan/build/Debug/generators/conan_toolchain.cmake"
+            }
         }
     ],
     "buildPresets": [
         {
-            "name": "base",
-            "configurePreset": "base",
-            "configuration": "Base",
+            "name": "Default",
+            "configurePreset": "Default",
             "jobs": 8
         },
         {
-            "name": "debug",
-            "configurePreset": "debug",
-            "configuration": "Debug",
+            "name": "Debug",
+            "configurePreset": "Debug",
             "jobs": 8
         }
     ]

@@ -5,7 +5,6 @@ compiler=clang
 compiler.version=20
 compiler.cppstd=gnu23
 compiler.libcxx=libstdc++11
-build_type=Debug
 
 [conf]
 tools.cmake.cmaketoolchain:generator=Ninja
