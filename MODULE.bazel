@@ -29,24 +29,6 @@ cc_library(
         "boost/system/**/*.hpp",
     ]),
     includes = ["boost"],
-)
-
-cc_library(
-    name = "asio",
-    hdrs = glob([
-        "boost/asio/*.hpp",
-        "boost/asio/**/*.hpp",
-    ]),
-    includes = ["boost"],
-)
-
-cc_library(
-    name = "beast",
-    hdrs = glob([
-        "boost/beast/*.hpp",
-        "boost/beast/**/*.hpp",
-    ]),
-    includes = ["boost"],
 )' > BUILD.bazel""",
     ],
 )

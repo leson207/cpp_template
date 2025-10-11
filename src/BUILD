@@ -7,8 +7,6 @@ cc_binary(
         "@quill",
         "@simdjson//:simdjson",
         "@boost//:system",
-        "@boost//:beast",
-        "@boost//:asio",
         "@openssl//:crypto",
         "@openssl//:ssl",
     ],
