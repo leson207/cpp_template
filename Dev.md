@@ -1,4 +1,3 @@
-clangd still point to system boost instead of project boost, error in export compile_commands.json
-bazel mod tidy
-bazel sync --configure
-bazel run //:refresh_compile_commands -- --include_external_repos --experimental_use_bazel_include_paths
+bazel prefer system lib over project lib, you have to explicit pointout using --cxxopt=-Iexternal/boost+
+https://bazel.build/versions/6.0.0/rules/lib/globals#archive_override
+https://bazel.build/reference/be/c-cpp#cc_library

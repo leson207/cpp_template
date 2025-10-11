@@ -17,6 +17,7 @@ bazel_dep(name = "boost", version = "1.89.0")
 archive_override(
     module_name = "boost",
     strip_prefix = "boost-1.89.0",
+    sha256 = "aa25e7b9c227c21abb8a681efd4fe6e54823815ffc12394c9339de998eb503fb",
     urls = ["https://github.com/boostorg/boost/releases/download/boost-1.89.0/boost-1.89.0-b2-nodocs.tar.gz"],
     patch_cmds = [
         """echo 'module(name = "boost", version = "1.89.0")' > MODULE.bazel""",
@@ -29,24 +30,26 @@ cc_library(
         "boost/system/**/*.hpp",
     ]),
     includes = ["boost"],
-)' > BUILD.bazel""",
+)
+' > BUILD.bazel""",
     ],
 )
 
 bazel_dep(name = "simdjson", version = "4.0.7")
 archive_override(
     module_name = "simdjson",
-    strip_prefix = "simdjson-4.0.7",
-    urls = ["https://github.com/simdjson/simdjson/archive/refs/tags/v4.0.7.tar.gz"],
+    sha256 = "076ee3bf715555357581d86c87a7dd4dd58a6a7f9955f256a1f0d13b4de62c4e",
+    urls = ["https://github.com/simdjson/simdjson/releases/download/v4.0.7/singleheader.zip"],
     patch_cmds = [
         """echo 'module(name = "simdjson", version = "4.0.7")' > MODULE.bazel""",
         """echo 'package(default_visibility = ["//visibility:public"])
 
 cc_library(
     name = "simdjson",
-    srcs = ["singleheader/simdjson.cpp"],
-    hdrs = ["singleheader/simdjson.h"],
-    includes = ["singleheader"],
-)' > BUILD.bazel""",
+    srcs = ["simdjson.cpp"],
+    hdrs = ["simdjson.h"],
+    includes = ["."],
+)
+' > BUILD.bazel""",
     ],
 )

@@ -4,6 +4,13 @@ build --linkopt=-fuse-ld=mold
 build --action_env=CC=/usr/bin/clang
 build --action_env=CXX=/usr/bin/clang++
 
+# build --cxxopt=-Iexternal/boost+
+build --cxxopt=-Wall
+build --cxxopt=-Wextra
+build --cxxopt=-Wpedantic
+build --cxxopt=-fcolor-diagnostics
+build --cxxopt=-fno-omit-frame-pointer
+
 # Debug build
 build:dbg --compilation_mode=dbg
 build:dbg --cxxopt=-O0
@@ -11,14 +18,3 @@ build:dbg --cxxopt=-g
 build:dbg --cxxopt=-pipe
 build:dbg --linkopt=-Wl,-O1
 build:dbg --linkopt=-Wl,--as-needed
-
-build:fastbuild --compilation_mode=fastbuild
-build:fastbuild --cxxopt=-O1
-build:fastbuild --cxxopt=-DNDEBUG
-build:fastbuild --cxxopt=-pipe
-build:fastbuild --linkopt=-Wl,-O1
-build:fastbuild --linkopt=-Wl,--as-needed
-
-# build --experimental_convenience_symlinks=ignore
-
-# build --experimental_action_listener=clang_tidy
