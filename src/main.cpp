@@ -1,12 +1,15 @@
+#include "simdjson.h"
+
+#include "nlohmann/json.hpp"
+
 #include <boost/asio/awaitable.hpp>
 #include <boost/asio/ssl.hpp>
 #include <boost/beast/core.hpp>
 #include <boost/beast/ssl.hpp>
+
 #include <iostream>
 #include <string>
 
-#include "nlohmann/json.hpp"
-#include "simdjson.h"
 
 class RpcClient
 {
