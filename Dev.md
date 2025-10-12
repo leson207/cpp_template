@@ -6,7 +6,8 @@ https://bazel.build/versions/6.0.0/rules/lib/globals#archive_override
 
 https://bazel.build/reference/be/c-cpp#cc_library
 
-
+# bazel use system openssl instead of project ssl
+cat compile_commands.json | grep usr/include/openssl
 
 
 bazel_dep(name = "openssl", version = "3.6.0")
