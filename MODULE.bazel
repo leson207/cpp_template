@@ -2,9 +2,9 @@
 module(name = "cpp_sample", version = "0.1")
 
 bazel_dep(name = "rules_cc", version = "0.2.8")
-
 bazel_dep(name = "quill", version = "9.0.0")
 bazel_dep(name = "openssl", version = "3.3.1.bcr.7")
+
 
 bazel_dep(name = "hedron_compile_commands", dev_dependency = True)
 git_override(
@@ -29,7 +29,7 @@ cc_library(
         "boost/system/*.hpp",
         "boost/system/**/*.hpp",
     ]),
-    includes = ["boost"],
+    includes = ["."],
 )
 ' > BUILD.bazel""",
     ],

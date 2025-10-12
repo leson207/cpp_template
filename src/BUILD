@@ -9,8 +9,5 @@ cc_binary(
         "@boost//:system",
         "@openssl//:crypto",
         "@openssl//:ssl",
-    ],
-    copts = [
-        "-Iexternal/boost+",
-    ],
+    ]
 )

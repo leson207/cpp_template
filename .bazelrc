@@ -3,6 +3,12 @@ build --cxxopt=-std=c++23
 build --linkopt=-fuse-ld=mold
 build --action_env=CC=/usr/bin/clang
 build --action_env=CXX=/usr/bin/clang++
+build --action_env=LD=/usr/bin/clang++
+build --action_env=BAZEL_USE_LLVM_NATIVE_TOOLCHAIN=1
+
+build --linkopt=-pthread
+build --cxxopt=-pthread
+build --cxxopt=-march=native
 
 # build --cxxopt=-Iexternal/boost+
 build --cxxopt=-Wall
