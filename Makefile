@@ -16,8 +16,7 @@ cmake_build:
 	cmake --build --preset $(PRESET)
 
 run:
-	. $(CONAN_ENV)
-	./build/$(PRESET)/src/main
+	./build/$(PRESET)/main
 
 cmake_clean:
 	shopt -s extglob

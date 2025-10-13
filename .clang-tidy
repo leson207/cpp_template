@@ -4,7 +4,8 @@ Checks: >
   performance-*,
   readability-*,
   bugprone-*,
-  cppcoreguidelines-*
+  cppcoreguidelines-*,
+    -readability-identifier-length
 
 WarningsAsErrors: ''
 HeaderFilterRegex: 'src/.*'

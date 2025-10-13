@@ -1,6 +1,4 @@
-#include "simdjson.h"
-
-#include "nlohmann/json.hpp"
+#include "cpp_sample/logger.hpp"
 
 #include <boost/asio/awaitable.hpp>
 #include <boost/asio/ssl.hpp>
@@ -27,10 +25,7 @@ RpcClient::RpcClient(boost::asio::io_context& ioc, std::string_view host)
 
 auto main() -> int
 {
-    for (int i = 0; i <= 10; ++i)
-    {
-        std::cout << i + 100 << "\n";
-    }
-    std::cout << "Hello world!!!!!!!";
+    get_logger();
+    std::cout << "Hello world!!!!!!!"<<"\n";
     return 0;
 }
