@@ -19,3 +19,19 @@ target_link_libraries(main PRIVATE
         OpenSSL::SSL
         OpenSSL::Crypto
 )
+
+
+include(CTest)
+enable_testing()
+
+find_package(Catch2 3 REQUIRED)
+
+add_library(calc STATIC src/calc.cpp)
+target_include_directories(calc PUBLIC ${CMAKE_SOURCE_DIR}/include)
+
+add_executable(test_calc tests/test_calc.cpp)
+target_link_libraries(test_calc PRIVATE
+        calc    
+        Catch2::Catch2WithMain
+)
+add_test(NAME test_calc COMMAND test_calc)

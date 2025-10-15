@@ -1,3 +1,5 @@
+tests/catches
+
 # Automatically add each source file that has a matching header in include/project
 file(GLOB_RECURSE HEADERS ${CMAKE_SOURCE_DIR}/include/project/*.hpp)
 set(SOURCES "")
