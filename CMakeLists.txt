@@ -4,10 +4,9 @@ project(cpp_sample LANGUAGES C CXX)
 message("Building with CMake version: ${CMAKE_VERSION}")
 
 # -----------------------------------------------------------------------
-
+find_package(CLI11 REQUIRED)
 find_package(quill REQUIRED)
 find_package(Boost REQUIRED COMPONENTS system)
-find_package(OpenSSL REQUIRED COMPONENTS SSL Crypto)
 
 # -----------------------------------------------------------------------
 
@@ -23,9 +22,7 @@ target_include_directories(calc PUBLIC ${CMAKE_SOURCE_DIR}/include)
 add_executable(main app/main.cpp)
 target_link_libraries(main PRIVATE
         logger
-        Boost::system
-        OpenSSL::SSL
-        OpenSSL::Crypto
+        CLI11::CLI11
 )
 
 # -----------------------------------------------------------------------

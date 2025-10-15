@@ -8,8 +8,8 @@ class CompressorRecipe(ConanFile):
     # exports_sources = "CMakeLists.txt", "src/*"
 
     def requirements(self):
+        self.requires("cli11/2.5.0")
         self.requires("quill/10.0.1")
-        self.requires("boost/1.83.0")
         self.requires(("catch2/3.11.0"))
 
     def build_requirements(self):

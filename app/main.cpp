@@ -1,31 +1,28 @@
 #include "project/logger.hpp"
 
-#include <boost/asio/awaitable.hpp>
-#include <boost/asio/ssl.hpp>
-#include <boost/beast/core.hpp>
-#include <boost/beast/ssl.hpp>
+#include <CLI/CLI.hpp>
 
 #include <iostream>
-#include <string>
 
-
-class RpcClient
+auto parse_args(int argc, char* argv[]) -> void
 {
-    std::string _host;
-    boost::asio::ssl::context _ctx;
-    boost::beast::ssl_stream<boost::beast::tcp_stream> _stream;
+    CLI::App app{"This is my app!"};
+    argv = app.ensure_utf8(argv);
 
-   public:
-    RpcClient(boost::asio::io_context& ioc, std::string_view host);
-    auto connect() -> boost::asio::awaitable<void>;
-};
+    std::string foo{"Hello"};
+    std::string bar{"world!"};
 
-RpcClient::RpcClient(boost::asio::io_context& ioc, std::string_view host)
-    : _host{host}, _ctx{boost::asio::ssl::context::tlsv13_client}, _stream{ioc, _ctx} {};
+    app.add_option("--foo", foo, "Foo");
+    app.add_option("--bar", bar, "Bar");
 
-auto main() -> int
+    app.parse(argc, argv);
+
+    std::cout << foo << " " << bar << "\n";
+}
+
+auto main(int argc, char* argv[]) -> int
 {
     get_logger();
-    std::cout << "Hello world!!!!!!!"<<"\n";
+    parse_args(argc, argv);
     return 0;
 }
