@@ -1,4 +1,4 @@
-#include "cpp_sample/logger.hpp"
+#include "project/logger.hpp"
 
 #include <quill/Logger.h>
 #include "quill/Backend.h"
