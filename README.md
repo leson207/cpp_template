@@ -16,6 +16,7 @@ add .clang-format, vscode auto detect that file
 
 use find_package to add lib or clangd will use system lib
 # Notice
+config file
 cli
 log with file
 artifact folder
