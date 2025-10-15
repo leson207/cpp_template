@@ -6,7 +6,8 @@ Checks: >
   bugprone-*,
   cppcoreguidelines-*,
   "portability-*",
-  -readability-identifier-length
+  -readability-identifier-length,
+  -cppcoreguidelines-avoid-magic-numbers
 
 WarningsAsErrors: ''
 HeaderFilterRegex: 'src/.*'
