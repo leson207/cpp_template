@@ -18,6 +18,10 @@ cmake_build:
 run:
 	./build/$(PRESET)/main
 
+test:
+	. $(CONAN_ENV)
+	ctest --test-dir build/Debug --output-on-failure
+
 cmake_clean:
 	shopt -s extglob
 	rm -rf ./build/$(PRESET)/!(generators)

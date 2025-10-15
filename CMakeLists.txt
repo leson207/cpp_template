@@ -3,16 +3,24 @@ project(cpp_sample LANGUAGES C CXX)
 
 message("Building with CMake version: ${CMAKE_VERSION}")
 
+# -----------------------------------------------------------------------
+
 find_package(quill REQUIRED)
 find_package(Boost REQUIRED COMPONENTS system)
 find_package(OpenSSL REQUIRED COMPONENTS SSL Crypto)
+
+# -----------------------------------------------------------------------
 
 add_library(logger STATIC src/logger.cpp)
 target_include_directories(logger PUBLIC ${CMAKE_SOURCE_DIR}/include)
 target_link_libraries(logger PUBLIC quill::quill)
 
-add_executable(main app/main.cpp)
+add_library(calc STATIC src/calc.cpp)
+target_include_directories(calc PUBLIC ${CMAKE_SOURCE_DIR}/include)
 
+# -----------------------------------------------------------------------
+
+add_executable(main app/main.cpp)
 target_link_libraries(main PRIVATE
         logger
         Boost::system
@@ -20,18 +28,8 @@ target_link_libraries(main PRIVATE
         OpenSSL::Crypto
 )
 
+# -----------------------------------------------------------------------
 
 include(CTest)
 enable_testing()
-
-find_package(Catch2 3 REQUIRED)
-
-add_library(calc STATIC src/calc.cpp)
-target_include_directories(calc PUBLIC ${CMAKE_SOURCE_DIR}/include)
-
-add_executable(test_calc tests/test_calc.cpp)
-target_link_libraries(test_calc PRIVATE
-        calc    
-        Catch2::Catch2WithMain
-)
-add_test(NAME test_calc COMMAND test_calc)
+add_subdirectory(tests)
