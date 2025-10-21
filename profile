@@ -4,7 +4,7 @@ arch=x86_64
 compiler=clang
 compiler.version=20
 compiler.cppstd=gnu23
-compiler.libcxx=libc++
+compiler.libcxx=libstdc++11
 
 [conf]
 tools.cmake.cmaketoolchain:generator=Ninja

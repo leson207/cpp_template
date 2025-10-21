@@ -16,7 +16,7 @@
         "-pretty",
 
         "--clang-tidy",
-        "--completion-style=detailed",
+        "--completion-style=bundled",
         "--header-insertion=iwyu"
     ],
     "files.associations": {
