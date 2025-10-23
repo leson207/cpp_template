@@ -20,7 +20,7 @@ run:
 
 test:
 	. $(CONAN_ENV)
-	ctest --test-dir build/Debug --output-on-failure
+	ctest --test-dir build/$(PRESET) --output-on-failure
 
 cmake_clean:
 	shopt -s extglob

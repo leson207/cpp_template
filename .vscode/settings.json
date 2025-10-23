@@ -1,24 +1,21 @@
 {
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
     "clangd.onConfigChanged": "restart",
     "clangd.arguments": [
         "--enable-config",
-        "--compile-commands-dir=build/Debug",
-        
-        "--pch-storage=memory",
-        "--background-index",
-        "--background-index-priority=background",
-        "-j=8",
-        
-        "--all-scopes-completion",
-        "--limit-results=500",
-        
-        "--log=info",
-        "-pretty",
 
+        "-j=8",
+        "--pch-storage=memory",
+        "--background-index-priority=background",
+        
+        "--pretty",
+        "--log=info",
         "--clang-tidy",
+        "--completion-parse=always",
         "--completion-style=bundled",
-        "--header-insertion=iwyu"
-    ],
+        "--experimental-modules-support",
+    ],  // https://manpages.debian.org/unstable/clangd-21/clangd-21.1.en.html
     "files.associations": {
         ".clangd": "yaml",
         ".clang-tidy": "yaml",

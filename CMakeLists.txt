@@ -10,12 +10,12 @@ find_package(Boost REQUIRED COMPONENTS system)
 
 # -----------------------------------------------------------------------
 
-add_library(logger STATIC src/logger.cpp)
-target_include_directories(logger PUBLIC ${CMAKE_SOURCE_DIR}/include)
+add_library(logger STATIC src/lib/logger.cpp)
+target_include_directories(logger PUBLIC ${CMAKE_SOURCE_DIR}/src)
 target_link_libraries(logger PUBLIC quill::quill)
 
-add_library(calc STATIC src/calc.cpp)
-target_include_directories(calc PUBLIC ${CMAKE_SOURCE_DIR}/include)
+add_library(calc STATIC src/lib/calc.cpp)
+target_include_directories(calc PUBLIC ${CMAKE_SOURCE_DIR}/src)
 
 # -----------------------------------------------------------------------
 

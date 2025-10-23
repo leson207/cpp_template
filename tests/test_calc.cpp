@@ -1,7 +1,7 @@
+#include "lib/calc.hpp"
+
 #include <catch2/catch_test_macros.hpp>
 #include <catch2/benchmark/catch_benchmark.hpp>
-
-#include "project/calc.hpp"
 
 
 TEST_CASE("Add are computed", "[add, subtract]")
