@@ -4,6 +4,7 @@
 
 #include <iostream>
 
+
 auto parse_args(int argc, char* argv[]) -> void
 {
     CLI::App app{"This is my app!"};

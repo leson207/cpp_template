@@ -1,5 +1,9 @@
+# https://clang.llvm.org/docs/ClangFormat.html
+# https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+
 BasedOnStyle: Google
-IndentWidth: 4
+IndentWidth: 2
+Language: Cpp
 ColumnLimit: 100
 BreakBeforeBraces: Allman
 SortIncludes: false

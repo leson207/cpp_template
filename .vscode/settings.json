@@ -2,6 +2,7 @@
     "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
     "clangd.onConfigChanged": "restart",
+    "clangd.path": "/usr/bin/clangd",
     "clangd.arguments": [
         "--enable-config",
 
