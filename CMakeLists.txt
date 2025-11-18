@@ -6,7 +6,7 @@ message("Building with CMake version: ${CMAKE_VERSION}")
 # -----------------------------------------------------------------------
 find_package(CLI11 REQUIRED)
 find_package(quill REQUIRED)
-find_package(Boost REQUIRED COMPONENTS system)
+# find_package(Boost REQUIRED COMPONENTS system)
 
 # -----------------------------------------------------------------------
 
