@@ -1,4 +1,4 @@
-#include "lib/logger.hpp"
+#include "cpp_template/logger.hpp"
 
 #include <quill/Logger.h>
 #include <quill/Backend.h>
@@ -9,7 +9,7 @@
 
 #include <filesystem>
 
-auto get_logger() -> const quill::Logger*
+auto get_logger() -> quill::Logger*
 {
     static auto* const logger = []() -> quill::Logger*
     {

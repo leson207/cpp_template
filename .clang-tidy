@@ -4,7 +4,7 @@ Checks: >
   -*,
   modernize-*,
   performance-*,
-  readability-*,
+  -readability-*,
   bugprone-*,
   cppcoreguidelines-*,
   "portability-*",

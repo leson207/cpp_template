@@ -23,12 +23,12 @@ cmake_config:
 	. $(CONAN_ENV)
 	cmake --preset $(PRESET)
 
-build:
+cmake_build:
 	. $(CONAN_ENV)
 	cmake --build --preset $(PRESET)
 
 run:
-	./build/$(PRESET)/main
+	./build/$(PRESET)/app/main
 
 test:
 	. $(CONAN_ENV)
