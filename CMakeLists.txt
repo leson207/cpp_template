@@ -4,6 +4,7 @@ project(cpp_template LANGUAGES C CXX)
 message("Building with CMake version: ${CMAKE_VERSION}")
 
 # -----------------------------------------------------------------------
+include(cmake/ProjectOptions.cmake)
 
 add_subdirectory(app)
 add_subdirectory(src)
