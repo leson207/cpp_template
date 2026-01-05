@@ -1,6 +1,6 @@
 find_package(Catch2 REQUIRED)
 
-add_executable(test_calc ${PROJECT_SOURCE_DIR}/tests/test_calc.cpp)
+add_executable(test_calc test_calc.cpp)
 target_link_libraries(test_calc
     PRIVATE
         project_options
