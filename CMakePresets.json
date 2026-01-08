@@ -2,65 +2,49 @@
     "version": 10,
     "configurePresets": [
         {
-            "name": "Default",
+            "name": "Base",
+			"hidden": true,
             "generator": "Ninja",
             "binaryDir": "${sourceDir}/build/${presetName}",
             "toolchainFile": "${sourceDir}/build/${presetName}/generators/conan_toolchain.cmake",
             "cacheVariables": {
-                "CMAKE_CXX_STANDARD": "23",
-                "CMAKE_CXX_STANDARD_REQUIRED": "ON",
-                "CMAKE_CXX_EXTENSIONS": "OFF",
-
-                "CMAKE_C_COMPILER": "clang",
-                "CMAKE_CXX_COMPILER": "clang++",
-                
-                "CMAKE_CXX_FLAGS": "-stdlib=libc++ -Wall -Wextra -Wpedantic -pipe -fdiagnostics-color=always -march=native",
-                "CMAKE_EXE_LINKER_FLAGS": "-stdlib=libc++ -fuse-ld=mold",
-                "CMAKE_SHARED_LINKER_FLAGS": "-stdlib=libc++ -fuse-ld=mold",
+                 "CMAKE_COLOR_DIAGNOSTICS": "ON",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
 
                 "CMAKE_C_COMPILER_LAUNCHER": "ccache",
-                "CMAKE_CXX_COMPILER_LAUNCHER": "ccache",
-                
-                "CMAKE_COLOR_DIAGNOSTICS": "ON",
-                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+                "CMAKE_CXX_COMPILER_LAUNCHER": "ccache"
             }
         },
         {
             "name": "Debug",
-            "inherits": ["Default"],
+            "inherits": ["Base"],
             "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug",
-                "CMAKE_CXX_FLAGS_DEBUG": "-O0 -glldb -fno-omit-frame-pointer",
-                "CMAKE_EXE_LINKER_FLAGS_DEBUG": "-Wl,-O1 -Wl,--as-needed",
-                "CMAKE_SHARED_LINKER_FLAGS_DEBUG": "-Wl,-O1 -Wl,--as-needed"
+                "CMAKE_BUILD_TYPE": "Debug"
             }
         },
         {
         "name": "Release",
-        "inherits": ["Default"],
+        "inherits": ["Base"],
         "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release",
-                "CMAKE_INTERPROCEDURAL_OPTIMIZATION": "TRUE",
-                "CMAKE_CXX_FLAGS_RELEASE": "-O3 -DNDEBUG -flto=thin",
-                "CMAKE_EXE_LINKER_FLAGS_RELEASE": "-flto=thin",
-                "CMAKE_SHARED_LINKER_FLAGS_RELEASE": "-flto=thin"
+                "CMAKE_INTERPROCEDURAL_OPTIMIZATION": "TRUE"
             }
         }
     ],
     "buildPresets": [
         {
-            "name": "Default",
-            "configurePreset": "Default",
+            "name": "Base",
+            "configurePreset": "Base",
             "jobs": 8
         },
         {
             "name": "Debug",
-            "inherits": "Default",
+            "inherits": "Base",
             "configurePreset": "Debug"
         },
         {
             "name": "Release",
-            "inherits": "Default",
+            "inherits": "Base",
             "configurePreset": "Release"
         }
     ]

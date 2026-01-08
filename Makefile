@@ -7,25 +7,6 @@ PRESET ?= Debug
 
 CONAN_ENV := ./build/${PRESET}/generators/conanbuild.sh
 
-cmake_config:
-	. $(CONAN_ENV)
-	cmake --preset $(PRESET)
-
-cmake_build:
-	. $(CONAN_ENV)
-	cmake --build --preset $(PRESET)
-
-run:
-	./build/$(PRESET)/main
-
-test:
-	. $(CONAN_ENV)
-	ctest --test-dir build/$(PRESET) --output-on-failure
-
-cmake_clean:
-	shopt -s extglob
-	rm -rf ./build/$(PRESET)/!(generators)
-
 conan_install:
 	conan install . \
 		--profile:host=profile \
@@ -37,6 +18,25 @@ conan_install:
 
 conan_clean:
 	rm -rf ./build/$(PRESET)/generators
+
+cmake_config:
+	. $(CONAN_ENV)
+	cmake --preset $(PRESET)
+
+cmake_build:
+	. $(CONAN_ENV)
+	cmake --build --preset $(PRESET)
+
+run:
+	./build/$(PRESET)/app/main
+
+test:
+	. $(CONAN_ENV)
+	ctest --test-dir build/$(PRESET) --output-on-failure
+
+cmake_clean:
+	shopt -s extglob
+	rm -rf ./build/$(PRESET)/!(generators)
 
 clean:
 	rm -rf build/$(PRESET)

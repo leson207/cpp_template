@@ -3,4 +3,4 @@
 #include <quill/Logger.h>
 
 
-auto get_logger() -> const quill::Logger*;
+auto get_logger() -> quill::Logger*;

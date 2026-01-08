@@ -4,28 +4,10 @@ project(cpp_template LANGUAGES C CXX)
 message("Building with CMake version: ${CMAKE_VERSION}")
 
 # -----------------------------------------------------------------------
-find_package(CLI11 REQUIRED)
-find_package(quill REQUIRED)
-# find_package(Boost REQUIRED COMPONENTS system)
+include(cmake/ProjectOptions.cmake)
 
-# -----------------------------------------------------------------------
-
-add_library(logger STATIC src/lib/logger.cpp)
-target_include_directories(logger PUBLIC ${CMAKE_SOURCE_DIR}/src)
-target_link_libraries(logger PUBLIC quill::quill)
-
-add_library(calc STATIC src/lib/calc.cpp)
-target_include_directories(calc PUBLIC ${CMAKE_SOURCE_DIR}/src)
-
-# -----------------------------------------------------------------------
-
-add_executable(main app/main.cpp)
-target_link_libraries(main PRIVATE
-        logger
-        CLI11::CLI11
-)
-
-# -----------------------------------------------------------------------
+add_subdirectory(app)
+add_subdirectory(src)
 
 include(CTest)
 enable_testing()

@@ -1,4 +1,4 @@
-#include "lib/logger.hpp"
+#include "cpp_template/logger.hpp"
 
 #include <CLI/CLI.hpp>
 

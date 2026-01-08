@@ -1,4 +1,4 @@
-#include "lib/calc.hpp"
+#include "cpp_template/calc.hpp"
 
 
 auto add(int a, int b) -> int
